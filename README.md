@@ -20,6 +20,17 @@ config :nri_rollbar,
   plug_default_advisory: <Give hints to how to resolve, point to playbook>
 ```
 
+Finally update your `router.ex` to include `Plug.ErrorHandler` and direct errors to NriRollbar, for example:
+
+```elixir
+defmodule MyApp.Router do
+  use MyApp.Web, :router
+  use Plug.ErrorHandler
+  
+  defp handle_errors(conn, error), do: NriRollbar.report_request_error(conn, error)
+end
+```
+
 ## Installation
 
 The package can be installed
@@ -27,6 +38,6 @@ by adding `nri_rollbar` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:nri_rollbar, github: "NoRedInk/nri_rollbar", tag: "v0.1.0"}]
+  [{:nri_rollbar, github: "NoRedInk/nri_rollbar", tag: "v0.1.1"}]
 end
 ```
