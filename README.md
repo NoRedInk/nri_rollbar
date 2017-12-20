@@ -1,19 +1,14 @@
 # NriRollbar
 
-**TODO: Add description**
+A simple wrapper of [Rollbax](https://github.com/elixir-addicts/rollbax) with some additional helper methods.  Used by CleverSync and Reports.
 
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
+The package can be installed
 by adding `nri_rollbar` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:nri_rollbar, "~> 0.1.0"}]
+  [{:nri_rollbar, git: "https://github.com/NoRedInk/nri_rollbar.git", tag: "0.1.0"}]
 end
 ```
-
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/nri_rollbar](https://hexdocs.pm/nri_rollbar).
-
