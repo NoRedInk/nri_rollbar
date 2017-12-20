@@ -49,10 +49,9 @@ defmodule NriRollbar do
       }
     }
 
-    # TODO - extract into configuration
     context = %{
-      impact: "Admin pages and reports pages on NoRedInk may experience errors",
-      advisory: "This may be caused by failure to access the database or wrong parameters when accessing the API"
+      impact: Application.get_env(:nri_rollbar, :plug_default_impact),
+      advisory: Application.get_env(:nri_rollbar, :plug_default_advisory)
     }
 
     Rollbax.report(kind, reason, stacktrace, context, conn_data)
